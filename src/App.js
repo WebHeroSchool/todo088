@@ -1,5 +1,8 @@
+
 import logo from './logo.svg';
 import './App.css';
+import count from './number.js';
+import {length} from './number.js';
 
 const name = 'Привет';
 const nuber = 26;
@@ -23,21 +26,8 @@ function App() {
         <p style= {{
           color: 'yellow'
         }}>
-        {nuber} + 1 =
-        {nuber +1}
-        </p>
-
-        <p style= {{
-          color: 'red'
-        }}>
-        {log || 'log is false'}
-        </p>
-        <p>
-        {log ? 'log is false' : 'log is true'}
-        {true}
-        {null}
-        {undefined}
-      {false}
+        count *length = 
+        {count + length}
         </p>
 
         <a
