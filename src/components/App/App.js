@@ -21,7 +21,7 @@ return (
 <div>
   <h1> Планы на день</h1>
   <ItemList items={items}/>
-  <Footer count={4} />;
+  <Footer count={4} />
 </div>);
 }
 
