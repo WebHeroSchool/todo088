@@ -2,6 +2,7 @@ import React from 'react';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
+import InputItem from '../InputItem/InputItem';
 
 const todoItem = 'Написать новое приложение';
 
@@ -9,13 +10,16 @@ const App = () => {
   const items = [
 
     {
-        value: 'Написать новое приложение'
+        value: 'Написать новое приложение',
+        isDone: true
     },
     {
-        value: 'прописать props'
+        value: 'прописать props',
+        isDone: false
      },
     {
-        value: 'сделать все дела'
+        value: 'сделать все дела',
+        isDone: true
     }
 ];
 return (
