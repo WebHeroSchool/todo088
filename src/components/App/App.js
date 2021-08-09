@@ -1,6 +1,7 @@
 import React from 'react';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
+import './App.css';
 
 const todoItem = 'Написать новое приложение';
 
@@ -18,8 +19,8 @@ const App = () => {
     }
 ];
 return (
-<div>
-  <h1> Планы на день</h1>
+<div className="wrap">
+  <h1 className="wrap_title"> Планы на день</h1>
   <ItemList items={items}/>
   <Footer count={4} />
 </div>);
