@@ -19,7 +19,5 @@ const Item = ({ value, isDone }) => (
 <DeleteOutlineIcon className={styles.btn} />
 </div>
 );
-<div ClassName={styles.button}>
-<DisableElevation />
-</div>
+
 export default Item;
