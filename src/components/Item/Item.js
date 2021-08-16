@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Item.module.css'
 import classnames from 'classnames';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
-import DisableElevation from '../DeleteButton/Delete';
 
 const Item = ({ value, isDone }) => (
 

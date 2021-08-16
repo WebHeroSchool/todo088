@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from '../Item/Item';
-import DisableElevation from '../DeleteButton/Delete';
+import Button from '@material-ui/core/Button';
 
 const ItemList = ({ items }) => (
 
@@ -8,7 +8,14 @@ const ItemList = ({ items }) => (
      {items.map(item =><div key={item.value}>
        <Item value={item.value} isDone={item.isDone}/>
        </div>)}
-       <DisableElevation />
+      <DisableElevation/>
 </div>);
 
+function DisableElevation() {
+  return (
+    <Button variant="contained" disableElevation>
+      Удалить все
+    </Button>
+  )
+};
 export default ItemList;
