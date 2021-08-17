@@ -14,15 +14,16 @@ class App extends Component {
         isDone: true
     },
     {
-        value: 'прописать props',
+        value: 'Прописать props',
         isDone: false
      },
     {
-        value: 'сделать все дела',
+        value: 'Сделать все дела',
         isDone: true
     }
 ]
 };
+onClickDone = isDone => console.log(isDone);
 render() {
 return (
 <div className={styles.wrap}>
