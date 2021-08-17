@@ -2,13 +2,12 @@ import React from 'react';
 import Item from '../Item/Item';
 import Button from '@material-ui/core/Button';
 
-const ItemList = ({ items }) => (
-
+const ItemList = ({ items, onClickDone }) => (
   <div>
      {items.map(item =><div key={item.value}>
-       <Item value={item.value} isDone={item.isDone}/>
+       <Item value={item.value} isDone={item.isDone} onClickDone={onClickDone}/>
        </div>)}
-      <DisableElevation/>
+      <DisableElevation />
 </div>);
 
 function DisableElevation() {
