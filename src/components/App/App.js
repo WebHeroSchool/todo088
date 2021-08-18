@@ -37,7 +37,7 @@ class App extends Component {
       }
     return newItem;
     });
-  this.setState ({ item: newItemList});
+  this.setState ({ itemы: newItemList});
   };
 
   render() {
@@ -45,8 +45,9 @@ return (
 <div className={styles.wrap}>
   <h1 className={styles.title}> Планы на день</h1>
   <InputItem />
-  <ItemList items={this.state.items}/>
-  <Footer count={4} />
+  <ItemList items={this.state.items} onClickDone = {this.onClickDone}/>
+
+  <Footer count={this.state.count} />
 </div>);
 }
 }
