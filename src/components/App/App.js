@@ -10,7 +10,7 @@ class App extends Component {
     items: [
 
       {
-          value: 'Написать новое приложение',
+          value: 'Сходить в магазин',
           isDone: true,
           id:1
       },

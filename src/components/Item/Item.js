@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Item.module.css'
+import styles from './Item.module.css';
 import classnames from 'classnames';
 import Checkbox from '@material-ui/core/Checkbox';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
@@ -13,7 +13,10 @@ const Item = ({ value, isDone,id, onClickDone }) => (
   color="primary"
   onClick={() => onClickDone(id)}
   />
-<p className={styles.itemText}>{value}</p>
+  <div className={
+           classnames({[styles.done]: isDone})
+       }> {value}</div>
+
 <DeleteOutlineIcon className={styles.btn} />
 </div>
 );

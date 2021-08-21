@@ -6,18 +6,9 @@
     align-items: center;
 }
 
-.itemText {
-  font-family: sans-serif;
-    margin: 0;
-}
-
-.item {
-    font-size: 18px;
-}
-
 .done {
   opacity: 0.7;
-     text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .btn {
