@@ -9,28 +9,45 @@ class App extends Component {
   state = {
     items: [
 
-    {
-        value: 'Написать новое приложение',
-        isDone: true
-    },
-    {
-        value: 'Прописать props',
-        isDone: false
-     },
-    {
-        value: 'Сделать все дела',
-        isDone: true
-    }
-]
-};
-onClickDone = isDone => console.log(isDone);
-render() {
+      {
+          value: 'Сходить в магазин',
+          isDone: true,
+          id:1
+      },
+      {
+          value: 'Прописать props',
+          isDone: false,
+          id: 2
+       },
+      {
+          value: 'Сделать все дела',
+          isDone: true,
+          id: 3
+      }
+    ],
+  count:7
+  };
+
+  onClickDone = id => {
+    const newItemList =this.state.items.map(item =>{
+      const newItem = { ...item};
+
+      if (item.id === id ){
+        newItem.isDone = !item.isDone;
+      }
+    return newItem;
+    });
+  this.setState ({ items: newItemList});
+  };
+
+  render() {
 return (
 <div className={styles.wrap}>
   <h1 className={styles.title}> Планы на день</h1>
   <InputItem />
-  <ItemList items={this.state.items}/>
-  <Footer count={4} />
+  <ItemList items={this.state.items} onClickDone = {this.onClickDone}/>
+
+  <Footer count={this.state.count} />
 </div>);
 }
 }
