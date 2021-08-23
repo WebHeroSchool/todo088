@@ -2,13 +2,14 @@ import React from 'react';
 import Item from '../Item/Item';
 import Button from '@material-ui/core/Button';
 
-const ItemList = ({ items, onClickDone }) => (
+const ItemList = ({ items, onClickDone, onClickDelete }) => (
   <div>
      {items.map(item =><div key={item.value}>
        <Item value={item.value}
        isDone={item.isDone}
        id = {item.id}
        onClickDone ={onClickDone}
+       onClickDelete = {onClickDelete}
        />
        </div>)}
 
