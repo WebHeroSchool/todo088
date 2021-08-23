@@ -57,8 +57,7 @@ return (
 <div className={styles.wrap}>
   <h1 className={styles.title}> Планы на день</h1>
   <InputItem />
-  <ItemList items={this.state.items} onClickDone = {this.onClickDone} onClickDelete={ this.onClickDelete }/>/>
-
+  <ItemList items={this.state.items} onClickDone = {this.onClickDone} onClickDelete={ this.onClickDelete }/>
   <Footer count={this.state.count} />
 </div>);
 }
