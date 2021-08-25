@@ -51,12 +51,28 @@ onClickDelete = id => {
   this.setState ({ items: newItemList});
   };
 
+onClickAdd = value =>this.setState(state => ({
+
+  items: [
+    ...state.items,
+    {
+      value,
+      isDone: false,
+      id: state.count - 1
+    }
+  ],
+  count: state.count - 1
+}));
+
   render() {
 return (
 <div className={styles.wrap}>
   <h1 className={styles.title}> Планы на день</h1>
-  <InputItem />
-  <ItemList items={this.state.items} onClickDone = {this.onClickDone} onClickDelete={ this.onClickDelete }/>
+  <InputItem onClickAdd={this.onClickAdd}/>
+  <ItemList
+      items={this.state.items}
+      onClickDone = {this.onClickDone}
+      onClickDelete={ this.onClickDelete }/>
   <Footer count={this.state.count} />
 </div>);
 }
