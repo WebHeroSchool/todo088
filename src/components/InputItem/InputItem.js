@@ -5,16 +5,26 @@ import styles from './InputItem.module.css';
 import Grid from '@material-ui/core/Grid'
 
 class InputItem extends React.Component{
-    state = {
-      inputValue: ''
-        };
+
+constructor(props) {
+ super(props);
+ this.state = {
+      inputValue: '',
+      helperText: '',
+      error: false
+    };
+
+}
 
     onButtonClick = () => {
-      this.setState({
+     if(this.state.inputValue !== ''){
+         this.setState({
         inputValue: ''
       });
       this.props.onClickAdd(this.state.inputValue);
-    }
+    }else
+    this.setState({helperText: 'Тут пусто! Напиши задачу', error: true})
+  };
     render() {
       const {onClickAdd} = this.props;
       return <Grid>
@@ -24,8 +34,12 @@ class InputItem extends React.Component{
               margin="dense"
               className={styles.searchInput}
               value={this.state.inputValue}
-              onChange ={event => this.setState({inputValue: event.target.value.toUpperCase()})}
-            
+              onChange ={event => this.setState({inputValue: event.target.value.toUpperCase(), error: false, helperText: ''})}
+              InputLabelProps={{
+                          shrink: true
+                          }}
+              helperText={this.state.helperText}
+              error={this.state.error}
           />
           <Button
             variant= 'contained'

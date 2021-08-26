@@ -25,7 +25,7 @@ class App extends Component {
           id: 3
       }
     ],
-  count:7
+  count:3
   };
 
   onClickDone = id => {
@@ -58,10 +58,11 @@ onClickAdd = value =>this.setState(state => ({
     {
       value,
       isDone: false,
-      id: state.count - 1
+      id: state.count + 1
     }
   ],
-  count: state.count - 1
+  
+  count: state.count + 1
 }));
 
   render() {
