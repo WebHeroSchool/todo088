@@ -20,7 +20,6 @@ const Item = ({ value, isDone,id, onClickDone, onClickDelete }) => (
 <DeleteOutlineIcon className={styles.btn} onClick={() => onClickDelete(id)} />
 </div>
 );
-Footer.defaultProps = { 
-  isDone:False;
-};
+
+
 export default Item;
