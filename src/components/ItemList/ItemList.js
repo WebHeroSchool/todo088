@@ -23,4 +23,15 @@ function DisableElevation() {
     </Button>
   )
 };
+ItemsList.defaultProps = {
+    items: [{
+        value: 'Кажется тут ошибочка',
+        isDone: false,
+          }]
+      };
+
+      ItemsList.propTypes = {
+          items: PropTypes.array.isRequired
+      };
+      
 export default ItemList;
