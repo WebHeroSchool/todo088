@@ -21,5 +21,10 @@ const Item = ({ value, isDone,id, onClickDone, onClickDelete }) => (
 </div>
 );
 
+Checkbox.defaultProps = {
+
+   isDone:false
+
+};
 
 export default Item;
