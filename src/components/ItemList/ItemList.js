@@ -1,6 +1,8 @@
 import React from 'react';
 import Item from '../Item/Item';
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
+
 
 const ItemList = ({ items, onClickDone, onClickDelete }) => (
   <div>
@@ -23,15 +25,15 @@ function DisableElevation() {
     </Button>
   )
 };
-ItemsList.defaultProps = {
+ItemList.defaultProps = {
     items: [{
         value: 'Кажется тут ошибочка',
         isDone: false,
           }]
       };
 
-      ItemsList.propTypes = {
+ItemList.propTypes = {
           items: PropTypes.array.isRequired
       };
-      
+
 export default ItemList;
