@@ -26,7 +26,7 @@ Item.defaultProps = {
    isDone:false
 };
 
-Item.proptypes = {
+Item.propTypes = {
     isDone: PropTypes.bool.isRequired,
     id: PropTypes.number.isRequired
 };

@@ -7,7 +7,7 @@ Footer.defaultProps = { //нужны для указания, какое зна�
     count: 0
 };
 
-Footer.proptypes = {
+Footer.propTypes = {
     count: PropTypes.number.isRequired
 };
 export default Footer;
