@@ -1,9 +1,22 @@
 import React from 'react';
 import Item from '../Item/Item';
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 
-const ItemList = ({ items, onClickDone, onClickDelete }) => (
-  <div>
+class ItemList extends React.Component{
+
+componentDidMount(){
+  console.log('componentDidMount');
+}
+componentDidUpdate(){
+  console.log('componentDidUpdate');
+}
+componentWillUnmount(){
+  console.log('componentWillUnmount');
+}
+render(){
+const { items, onClickDone, onClickDelete } =this.props;
+return (  <div>
      {items.map(item =><div key={item.id}>
        <Item value={item.value}
        isDone={item.isDone}
@@ -23,15 +36,16 @@ function DisableElevation() {
     </Button>
   )
 };
-ItemsList.defaultProps = {
+ItemList.defaultProps = {
     items: [{
         value: 'Кажется тут ошибочка',
         isDone: false,
           }]
       };
 
-      ItemsList.propTypes = {
+ItemList.propTypes = {
           items: PropTypes.array.isRequired
       };
-      
+    }};
+
 export default ItemList;
