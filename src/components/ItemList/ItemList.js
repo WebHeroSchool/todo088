@@ -3,9 +3,20 @@ import Item from '../Item/Item';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 
+class ItemList extends React.Component{
 
-const ItemList = ({ items, onClickDone, onClickDelete }) => (
-  <div>
+componentDidMount(){
+  console.log('componentDidMount');
+}
+componentDidUpdate(){
+  console.log('componentDidUpdate');
+}
+componentWillUnmount(){
+  console.log('componentWillUnmount');
+}
+render(){
+const { items, onClickDone, onClickDelete } =this.props;
+return (  <div>
      {items.map(item =><div key={item.id}>
        <Item value={item.value}
        isDone={item.isDone}
@@ -35,5 +46,6 @@ ItemList.defaultProps = {
 ItemList.propTypes = {
           items: PropTypes.array.isRequired
       };
+    }};
 
 export default ItemList;

@@ -5,7 +5,21 @@ import Checkbox from '@material-ui/core/Checkbox';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import PropTypes from 'prop-types';
 
-const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => (
+class Item extends React.Component{
+
+componentDidMount(){
+  console.log('componentDidMount');
+}
+componentDidUpdate(){
+  console.log('componentDidUpdate');
+}
+componentWillUnmount(){
+  console.log('componentWillUnmount');
+}
+render(){
+
+const { value, isDone, id, onClickDone, onClickDelete } = this.props;
+return (
 
   <div className={styles.itemWrap}>
 <Checkbox
@@ -30,5 +44,5 @@ Item.propTypes = {
     isDone: PropTypes.bool.isRequired,
     id: PropTypes.number.isRequired
 };
-
+}};
 export default Item;
