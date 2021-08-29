@@ -5,7 +5,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import PropTypes from 'prop-types';
 
-const Item = ({ value, isDone,id, onClickDone, onClickDelete }) => (
+const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => (
 
   <div className={styles.itemWrap}>
 <Checkbox
