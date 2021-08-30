@@ -8,13 +8,11 @@ import PropTypes from 'prop-types';
 class Item extends React.Component{
 
 componentDidMount(){
-  console.log('componentDidMount');
+  this.timerID = setInterval(() => console.log('у нас вор!'), 1000);
 }
-componentDidUpdate(){
-  console.log('componentDidUpdate');
-}
+
 componentWillUnmount(){
-  console.log('componentWillUnmount');
+  clearInterval(this.timerID);
 }
 render(){
 
@@ -41,8 +39,12 @@ Item.defaultProps = {
 };
 
 Item.propTypes = {
+    value:PropTypes.string.isRequired,
     isDone: PropTypes.bool.isRequired,
-    id: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired,
+    onClickDone: PropTypes.func.isRequired,
+    onClickDelete: PropTypes.func.isRequired
+
 };
 }};
 export default Item;
