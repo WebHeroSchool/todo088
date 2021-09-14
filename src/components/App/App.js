@@ -1,14 +1,13 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 import InputItem from '../InputItem/InputItem';
 
 
-class App extends Component {
-  state = {
+const App =() => {
+  const initialState = {
     items: [
-
       {
           value: 'Сходить в магазин',
           isDone: true,
@@ -26,10 +25,13 @@ class App extends Component {
       }
     ],
   count:3
-  };
+};
+const[items,setTodoitem] = useState(initialState.items);
+const[count,setCount] = useState(initialState.items);
 
-  onClickDone = id => {
-    const newItemList =this.state.items.map(item =>{
+
+  const onClickDone = id => {
+    const newItemList = items.map(item =>{
       const newItem = { ...item};
 
       if (item.id === id ){
@@ -37,44 +39,40 @@ class App extends Component {
       }
     return newItem;
     });
-  this.setState ({ items: newItemList});
+  setTodoitem(newItemList)
   };
 
-onClickDelete = id => {
-  const newItemList =this.state.items.filter(item =>{
-    const newItem = { ...item};
-
-    if (item.id !== id ){
-      return newItem;
-    }
- });
-  this.setState ({ items: newItemList});
+const onClickDelete = id => {
+  const newItem = items.filter(item =>
+    item.id !== id );
+    setTodoitem(newItemList);
+    setCount(value(count: any|*[])=>count-1)
   };
 
-onClickAdd = value =>this.setState(state => ({
+const onClickAdd = value =>(
+const newTodoitem: [
+  ...  newTodoitem,
+  {
+    value,
+    isDone: false,
+    id:  count + 1
+  }
+],
 
-  items: [
-    ...state.items,
-    {
-      value,
-      isDone: false,
-      id: state.count + 1
-    }
-  ],
-  
-  count: state.count + 1
-}));
+setTodoitem (newItemList);
+setCount(value(count:any|*[])=>count-1)
+};
 
   render() {
 return (
 <div className={styles.wrap}>
   <h1 className={styles.title}> Планы на день</h1>
-  <InputItem onClickAdd={this.onClickAdd}/>
+  <InputItem onClickAdd={onClickAdd}/>
   <ItemList
-      items={this.state.items}
-      onClickDone = {this.onClickDone}
-      onClickDelete={ this.onClickDelete }/>
-  <Footer count={this.state.count} />
+      items={ items}
+      onClickDone = {onClickDone}
+      onClickDelete={ onClickDelete }/>
+  <Footer count={ count} />
 </div>);
 }
 }

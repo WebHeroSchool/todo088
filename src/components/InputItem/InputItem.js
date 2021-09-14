@@ -8,7 +8,7 @@ class InputItem extends React.Component{
 
 constructor(props) {
  super(props);
- this.state = {
+ state = {
       inputValue: '',
       helperText: '',
       error: false
@@ -17,35 +17,35 @@ constructor(props) {
 }
 
     onButtonClick = () => {
-     if(this.state.inputValue !== ''){
-         this.setState({
+     if( inputValue !== ''){
+         setState({
         inputValue: ''
       });
-      this.props.onClickAdd(this.state.inputValue);
+      props.onClickAdd( inputValue);
     }else
-    this.setState({helperText: 'Тут пусто! Напиши задачу', error: true})
+    setState({helperText: 'Тут пусто! Напиши задачу', error: true})
   };
     render() {
-      const {onClickAdd} = this.props;
+      const {onClickAdd} = props;
       return <Grid>
           <TextField
               id="standard-dense"
               label="Добавить задачу"
               margin="dense"
               className={styles.searchInput}
-              value={this.state.inputValue}
-              onChange ={event => this.setState({inputValue: event.target.value.toUpperCase(), error: false, helperText: ''})}
+              value={ inputValue}
+              onChange ={event => setState({inputValue: event.target.value.toUpperCase(), error: false, helperText: ''})}
               InputLabelProps={{
                           shrink: true
                           }}
-              helperText={this.state.helperText}
-              error={this.state.error}
+              helperText={ helperText}
+              error={ error}
           />
           <Button
             variant= 'contained'
             color='primary'
             fillwidth
-            onClick={this.onButtonClick}
+            onClick={onButtonClick}
             >
           Добавить
           </Button>
