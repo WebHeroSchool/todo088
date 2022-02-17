@@ -3,7 +3,7 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 import InputItem from '../InputItem/InputItem';
-
+import { Container } from '@material-ui/core';
 
 const App =() => {
   const initialState = {
@@ -43,27 +43,28 @@ const[count,setCount] = useState(initialState.items);
   };
 
 const onClickDelete = id => {
-  const newItem = items.filter(item =>
+  const newItemList = items.filter(item =>
     item.id !== id );
-    setTodoitem(newItemList);
-    setCount(value(count: any|*[])=>count-1)
+    setTodoitem(newItemLis);
+    setCount(count=>count-1)
   };
 
-const onClickAdd = value =>(
-const newTodoitem: [
-  ...  newTodoitem,
-  {
-    value,
+const onClickAdd = value =>{
+      setTodoitem(
+        [...newTodoitem,
+          { value,
     isDone: false,
     id:  count + 1
   }
-],
+    ]
+  );
+  };
 
-setTodoitem (newItemList);
-setCount(value(count:any|*[])=>count-1)
+/* setTodoitem (newTodoitem);
+* setCount(count=>count-1)
 };
 
-  render() {
+}
 return (
 <div className={styles.wrap}>
   <h1 className={styles.title}> Планы на день</h1>
@@ -74,7 +75,7 @@ return (
       onClickDelete={ onClickDelete }/>
   <Footer count={ count} />
 </div>);
-}
-}
+}*/
+
 
 export default App;
