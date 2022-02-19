@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
@@ -45,26 +45,21 @@ const[count,setCount] = useState(initialState.items);
 const onClickDelete = id => {
   const newItemList = items.filter(item =>
     item.id !== id );
-    setTodoitem(newItemLis);
+    setTodoitem(newItemList);
     setCount(count=>count-1)
   };
 
 const onClickAdd = value =>{
-      setTodoitem(
-        [...newTodoitem,
+    const newItemList= [
+			...items,
           { value,
     isDone: false,
     id:  count + 1
   }
-    ]
-  );
-  };
-
-/* setTodoitem (newTodoitem);
-* setCount(count=>count-1)
-};
-
-}
+];
+    setTodoitem (newItemList);
+    setCount(count=>count-1)
+  }
 return (
 <div className={styles.wrap}>
   <h1 className={styles.title}> Планы на день</h1>
@@ -75,7 +70,7 @@ return (
       onClickDelete={ onClickDelete }/>
   <Footer count={ count} />
 </div>);
-}*/
+}
 
 
 export default App;
