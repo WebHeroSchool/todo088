@@ -5,18 +5,15 @@ import Checkbox from '@material-ui/core/Checkbox';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import PropTypes from 'prop-types';
 
-class Item extends React.Component{
-
-componentDidMount(){
-  timerID = setInterval(() => console.log('у нас вор!'), 1000);
+class Item extends React.Component{componentDidMount(){
+  this.timerID = setInterval(() => console.log('у нас вор!'), 1000);
 }
 
 componentWillUnmount(){
-  clearInterval(timerID);
+clearInterval(this.timerID);
 }
 render(){
-
-const { value, isDone, id, onClickDone, onClickDelete } = props;
+  const { value, isDone, id, onClickDone, onClickDelete } = this.props;
 return (
 
   <div className={styles.itemWrap}>
@@ -33,18 +30,24 @@ return (
 <DeleteOutlineIcon className={styles.btn} onClick={() => onClickDelete(id)} />
 </div>
 );
+}}
 
 Item.defaultProps = {
-   isDone:false
-};
+    items: [{
+        isDone: false,
+          }]
+      };
 
 Item.propTypes = {
+    items: [{
     value:PropTypes.string.isRequired,
     isDone: PropTypes.bool.isRequired,
     id: PropTypes.number.isRequired,
     onClickDone: PropTypes.func.isRequired,
     onClickDelete: PropTypes.func.isRequired
-
+}]
 };
-}};
+
+
+
 export default Item;

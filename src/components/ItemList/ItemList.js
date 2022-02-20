@@ -15,7 +15,7 @@ componentWillUnmount(){
   console.log('componentWillUnmount');
 }
 render(){
-const { items, onClickDone, onClickDelete } =props;
+const { items, onClickDone, onClickDelete } =this.props;
 return (  <div>
      {items.map(item =><div key={item.id}>
        <Item value={item.value}
