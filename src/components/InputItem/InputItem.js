@@ -42,7 +42,7 @@ class InputItem extends React.Component{
             <Button
               variant= 'contained'
               color='primary'
-              fillwidth
+            fillwidth='true'
               onClick={this.onButtonClick}
               >
             Добавить

@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 import InputItem from '../InputItem/InputItem';
 
+
 const App =() => {
   const initialState = {
     items: [
@@ -27,9 +28,9 @@ const App =() => {
 };
 const[items,setTodoitem] = useState(initialState.items);
 useEffect(() => {
-
-        console.log('useEffect');
-    })
+  console.log('mount');
+}, []);
+useEffect(() => console.log('useEffect'));
 
 
   const onClickDone = id => {
@@ -57,7 +58,7 @@ const onClickAdd = value =>{
     id:  items.length + 1
   }
 ];
-    setTodoitem (newItemList)
+    setTodoitem (newItemList);
   }
 
   const activeTasks = items.filter(item => !item.isDone)

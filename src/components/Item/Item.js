@@ -25,7 +25,7 @@ return (
   />
   <div className={
            classnames({
-             [styles.item]: true,
+             [styles.isDone]: true,
              [styles.done]: isDone})
        }> {value}</div>
 <DeleteOutlineIcon className={styles.btn} onClick={() => onClickDelete(id)} />
@@ -34,20 +34,18 @@ return (
 }}
 
 Item.defaultProps = {
-    items: [{
+    item: [{
         isDone: false,
           }]
       };
 
 Item.propTypes = {
-    items: [{
-    value:PropTypes.string.isRequired,
-    isDone: PropTypes.bool.isRequired,
-    id: PropTypes.number.isRequired,
-    onClickDone: PropTypes.func.isRequired,
-    onClickAdd: PropTypes.func.isRequired,
-    onClickDelete: PropTypes.func.isRequired
-}]
+    value:PropTypes.string,
+    isDone: PropTypes.bool,
+    id: PropTypes.number,
+    onClickDone: PropTypes.func,
+    onClickAdd: PropTypes.func,
+    onClickDelete: PropTypes.func
 };
 
 

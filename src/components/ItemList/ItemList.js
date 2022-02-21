@@ -42,14 +42,14 @@ function DisableElevation() {
 };
   }};
 ItemList.defaultProps = {
-    items: [{
+    item: [{
         value: 'Кажется тут ошибочка',
         isDone: false,
           }]
       };
 
 ItemList.propTypes = {
-          items: PropTypes.array.isRequired,
+          item: PropTypes.array.isRequired,
           onClickDone: PropTypes.func.isRequired,
           onClickDelete: PropTypes.func.isRequired
       };
