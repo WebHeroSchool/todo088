@@ -13,7 +13,7 @@ componentWillUnmount(){
 clearInterval(this.timerID);
 }
 render(){
-  const { value, isDone, id, onClickDone, onClickDelete, onClickAdd } = this.props;
+  const { value, isDone, id, onClickDone, onClickDelete} = this.props;
 return (
 
   <div className={styles.itemWrap}>

@@ -15,7 +15,7 @@ componentWillUnmount(){
   console.log('componentWillUnmount');
 }
 render(){
-const { items, value, isDone, onClickDone, onClickDelete,id, onClickAdd } =this.props;
+const { items, onClickDone, onClickDelete,id } =this.props;
 return (
   <div>
      {items.map(item =><div key={item.id}>
@@ -40,6 +40,7 @@ function DisableElevation() {
     </Button>
   )
 };
+  }};
 ItemList.defaultProps = {
     items: [{
         value: 'Кажется тут ошибочка',
@@ -52,6 +53,6 @@ ItemList.propTypes = {
           onClickDone: PropTypes.func.isRequired,
           onClickDelete: PropTypes.func.isRequired
       };
-    }};
+
 
 export default ItemList;

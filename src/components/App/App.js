@@ -3,7 +3,6 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 import InputItem from '../InputItem/InputItem';
-import { Container } from '@material-ui/core';
 
 const App =() => {
   const initialState = {
@@ -27,7 +26,6 @@ const App =() => {
   count:3
 };
 const[items,setTodoitem] = useState(initialState.items);
-const[count,setCount] = useState(initialState.count);
 useEffect(() => {
 
         console.log('useEffect');
@@ -59,8 +57,7 @@ const onClickAdd = value =>{
     id:  items.length + 1
   }
 ];
-    setTodoitem (newItemList);
-    setCount(count=>count+1)
+    setTodoitem (newItemList)
   }
 
   const activeTasks = items.filter(item => !item.isDone)
