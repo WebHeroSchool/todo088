@@ -15,8 +15,9 @@ componentWillUnmount(){
   console.log('componentWillUnmount');
 }
 render(){
-const { items, onClickDone, onClickDelete } =this.props;
-return (  <div>
+const { items, value, isDone, onClickDone, onClickDelete,id, onClickAdd } =this.props;
+return (
+  <div>
      {items.map(item =><div key={item.id}>
        <Item value={item.value}
        isDone={item.isDone}
@@ -26,12 +27,15 @@ return (  <div>
        />
        </div>)}
 
-  <DisableElevation />
-</div>);
+  <DisableElevation
+  onClick={() => onClickDelete(id)}
+  />
+</div>)
 
 function DisableElevation() {
   return (
-    <Button variant="contained" disableElevation>
+    <Button
+    variant="contained" disableElevation>
       Удалить все
     </Button>
   )

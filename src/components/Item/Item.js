@@ -13,7 +13,7 @@ componentWillUnmount(){
 clearInterval(this.timerID);
 }
 render(){
-  const { value, isDone, id, onClickDone, onClickDelete } = this.props;
+  const { value, isDone, id, onClickDone, onClickDelete, onClickAdd } = this.props;
 return (
 
   <div className={styles.itemWrap}>
@@ -24,9 +24,10 @@ return (
   onClick={() => onClickDone(id)}
   />
   <div className={
-           classnames({[styles.done]: isDone})
+           classnames({
+             [styles.item]: true,
+             [styles.done]: isDone})
        }> {value}</div>
-
 <DeleteOutlineIcon className={styles.btn} onClick={() => onClickDelete(id)} />
 </div>
 );
@@ -44,6 +45,7 @@ Item.propTypes = {
     isDone: PropTypes.bool.isRequired,
     id: PropTypes.number.isRequired,
     onClickDone: PropTypes.func.isRequired,
+    onClickAdd: PropTypes.func.isRequired,
     onClickDelete: PropTypes.func.isRequired
 }]
 };
