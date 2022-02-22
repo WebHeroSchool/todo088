@@ -5,15 +5,7 @@ import PropTypes from 'prop-types';
 
 class ItemList extends React.Component{
 
-componentDidMount(){
-  console.log('componentDidMount');
-}
-componentDidUpdate(){
-  console.log('componentDidUpdate');
-}
-componentWillUnmount(){
-  console.log('componentWillUnmount');
-}
+
 render(){
 const { items, onClickDone, onClickDelete,id } =this.props;
 return (

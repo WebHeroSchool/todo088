@@ -5,13 +5,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import PropTypes from 'prop-types';
 
-class Item extends React.Component{componentDidMount(){
-  this.timerID = setInterval(() => console.log('у нас вор!'), 1000);
-}
-
-componentWillUnmount(){
-clearInterval(this.timerID);
-}
+class Item extends React.Component{
 render(){
   const { value, isDone, id, onClickDone, onClickDelete} = this.props;
 return (
