@@ -27,6 +27,7 @@ const App =() => {
   count:3
 };
 const[items,setTodoitem] = useState(initialState.items);
+
 useEffect(() => {
   console.log('mount');
 }, []);
@@ -55,7 +56,7 @@ const onClickAdd = value =>{
 			...items,
           { value,
     isDone: false,
-    id:  items.length + 1
+    id:  items.count + 1
   }
 ];
     setTodoitem (newItemList);

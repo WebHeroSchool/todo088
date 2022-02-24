@@ -25,6 +25,7 @@ class InputItem extends React.Component{
       this.setState({helperText: 'Тут пусто! Напиши задачу', error: true})
     };
       render() {
+
         return <Grid>
             <TextField
                 id="standard-dense"
