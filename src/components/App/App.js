@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import Todo from '../Todo/Todo';
 import About from '../About/About';
 import Contacts from '../Contacts/Contacts';
@@ -22,13 +22,13 @@ class App extends React.Component{
           <Link to='/Todo' className={styles.Link}><MenuItem>Дела</MenuItem></Link>
           <Link to='/contacts' className={styles.Link}><MenuItem>Контакты</MenuItem></Link>
         </MenuList>
-  </Card>
+        </Card>
 
-  <Card className={styles.content}>
+<Routes className={styles.content}>
       <Route path='/' exact componen={<About/>} />
       <Route path='/todo' component={<Todo/>} />
       <Route path='/contacts' componen={<Contacts/>} />
-  </Card>
+  </Routes>
   </div>
   </Router>
 );

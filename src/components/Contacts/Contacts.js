@@ -1,9 +1,17 @@
 import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import PropTypes  from 'prop-types';
 
-const About = () => (
-    <div>
-        Контакты
-    </div>
-);
+const Contacts = ({ myContacts }) => (
+	<h1> {myContacts} </h1>
+)
 
-export default About;
+Contacts.defaultProps = {
+	myContacts: "Secret "
+}
+
+Contacts.propTypes = {
+	myContacts: PropTypes.string
+}
+
+export default Contacts;

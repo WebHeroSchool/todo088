@@ -3,6 +3,7 @@ import styles from './Todo.module.css';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
+import PropTypes from 'prop-types';
 
 class Todo extends React.Component {
     state = {
