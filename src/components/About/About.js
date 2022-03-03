@@ -4,9 +4,15 @@ import PropTypes  from 'prop-types';
 
 
 const About = ({ aboutMe }) => (
-  <div>
-      About
-    </div>
-  );
+  	<h1> {aboutMe} </h1>
+  )
+
+  About.defaultProps = {
+  aboutMe: "About "
+  }
+
+  About.propTypes = {
+  	aboutMe: PropTypes.string
+  }
 
 export default About;
