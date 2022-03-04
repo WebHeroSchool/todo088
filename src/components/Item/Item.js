@@ -28,12 +28,11 @@ return (
 }}
 
 Item.defaultProps = {
-    item: [{
-        isDone: false,
-          }]
+        isDone: false
       };
 
 Item.propTypes = {
+  count:PropTypes.bool,
     value:PropTypes.string,
     isDone: PropTypes.bool,
     id: PropTypes.number,

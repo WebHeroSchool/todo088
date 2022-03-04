@@ -1,18 +1,23 @@
 .wrap{
-  min-width: 300px;
-    max-width: 450px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    padding: 10px;
-    border: 2px solid lightgrey;
-    border-radius: 8px;
+  display: grid;
+  grid-template-areas: 'sidebar ... content content';
+  margin: auto;
+  width: 500px;
     font-family: sans-serif;
 }
  .title{
    margin: 0;
   text-align: center;
+}
 
- }
+.link {
+      text-decoration: none;
+  }
+
+  .sidebar {
+      grid-area: sidebar;
+  }
+.content{
+  grid-area: content;
+  width: auto;
+}
