@@ -1,9 +1,8 @@
 import React from 'react';
 import CardContent from '@material-ui/core/CardContent';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Octokit from '@Octokit/rest';
+import { Octokit } from '@octokit/rest';
 import Preloader from '../Preloader/Preloader';
-
 const octokit = new Octokit();
 
 class About extends React.Component{
@@ -13,7 +12,7 @@ class About extends React.Component{
     fetchReposSuccess: false,
         error: '',
   }
-  ComponentDidMount() {
+  componentDidMount() {
     octokit.repos.listForUser({
       usermane:this.state.username,
     }).then(({ data}) => {
@@ -42,15 +41,34 @@ class About extends React.Component{
     });
   }
 render(){
-  const {isLoading, repoList}=this.state;
+  const {isLoading, repoList, avatarURL, name, fetchReposSuccess, error}=this.state;
   return(
    <CardContent>
-      <h3> {isLoading ? <CircularProgress/> :' About'} </h3>
-      {!isLoading && <ol>
-        {repoList.map(repo => (<li key={repo.id}>
-          {repo.name}
-          </li>))}
-        </ol>}
+      <h3> {isLoading ? <Preloader /> :' About'} </h3>
+      {!isLoading &&
+        <div>
+                        { !fetchReposSuccess ? 'Что-то пошло не так. Ошибка: ' + error :
+                            <div>
+                                <h2>
+                                    Меня зовут: {name}
+                                </h2>
+
+                                <div>
+                                    <img src={avatarURL} alt={name}  />
+                                </div>
+
+                                <ol>
+                                    {repoList.map(repo => (
+                                        <li key={repo.id}>
+                                            <a href={repo.html_url} target='blank'>
+                                                {repo.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ol>
+                            </div>
+                        }
+                    </div>}
     </CardContent>
     );
   }
